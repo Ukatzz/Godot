@@ -1,0 +1,79 @@
+[gd_scene load_steps=7 format=3 uid="uid://dldfo2l7spnkl"]
+
+[ext_resource type="Texture2D" uid="uid://cieu8odu5sgbu" path="res://Assets/resourses/Buildings/houses/knights/Tower/Tower_Construction.png" id="1_l5714"]
+[ext_resource type="Script" path="res://Scripts/Towers/tower_construct.gd" id="1_vwfh7"]
+[ext_resource type="Texture2D" uid="uid://bv5vw4v41us7n" path="res://Assets/resourses/Buildings/houses/knights/Tower/Tower_Blue.png" id="3_kavj0"]
+[ext_resource type="Texture2D" uid="uid://2vxl2yk5j8d1" path="res://Assets/resourses/Buildings/houses/knights/Tower/Tower_Yellow.png" id="4_k0rkx"]
+[ext_resource type="Texture2D" uid="uid://djbnvql4klt2l" path="res://Assets/resourses/Buildings/houses/knights/Tower/Tower_Purple.png" id="5_k0oxg"]
+[ext_resource type="Texture2D" uid="uid://dm5ncqt7qhce" path="res://Assets/resourses/Buildings/houses/knights/Tower/Tower_Red.png" id="6_lpsqn"]
+
+[node name="Tower_Create" type="Button"]
+self_modulate = Color(1, 1, 1, 0)
+offset_right = 127.0
+offset_bottom = 96.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+script = ExtResource("1_vwfh7")
+metadata/_edit_group_ = true
+
+[node name="Tower_Construct" type="Sprite2D" parent="."]
+position = Vector2(64, -13)
+texture = ExtResource("1_l5714")
+
+[node name="Logic" type="Node2D" parent="Tower_Construct"]
+
+[node name="Panel" type="Panel" parent="."]
+offset_left = -63.0
+offset_top = -241.0
+offset_right = 185.0
+offset_bottom = -1.0
+
+[node name="Blue_Tower" type="Button" parent="Panel"]
+layout_mode = 2
+offset_left = 8.0
+offset_top = 8.0
+offset_right = 116.0
+offset_bottom = 116.0
+
+[node name="Sprite2D" type="Sprite2D" parent="Panel/Blue_Tower"]
+position = Vector2(53, 44)
+scale = Vector2(0.542969, 0.542969)
+texture = ExtResource("3_kavj0")
+
+[node name="Yellow_Tower" type="Button" parent="Panel"]
+layout_mode = 2
+offset_left = 125.0
+offset_top = 8.0
+offset_right = 233.0
+offset_bottom = 116.0
+
+[node name="Sprite2D" type="Sprite2D" parent="Panel/Yellow_Tower"]
+position = Vector2(53, 46)
+scale = Vector2(0.56836, 0.56836)
+texture = ExtResource("4_k0rkx")
+
+[node name="Purple_Tower" type="Button" parent="Panel"]
+layout_mode = 2
+offset_left = 8.0
+offset_top = 124.0
+offset_right = 116.0
+offset_bottom = 232.0
+
+[node name="Sprite2D" type="Sprite2D" parent="Panel/Purple_Tower"]
+position = Vector2(51.375, 47)
+scale = Vector2(0.572266, 0.572266)
+texture = ExtResource("5_k0oxg")
+
+[node name="Red_Tower" type="Button" parent="Panel"]
+layout_mode = 2
+offset_left = 124.0
+offset_top = 125.0
+offset_right = 233.0
+offset_bottom = 234.0
+
+[node name="Sprite2D" type="Sprite2D" parent="Panel/Red_Tower"]
+position = Vector2(54, 45.875)
+scale = Vector2(0.569336, 0.569336)
+texture = ExtResource("6_lpsqn")
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]
