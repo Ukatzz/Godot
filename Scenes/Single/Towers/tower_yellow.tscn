@@ -1,6 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://di08bmecoyr7c"]
-
-[ext_resource type="Texture2D" uid="uid://2vxl2yk5j8d1" path="res://Assets/resourses/Buildings/houses/knights/Tower/Tower_Yellow.png" id="1_ssvnc"]
-
-[node name="TowerYellow" type="Sprite2D"]
-texture = ExtResource("1_ssvnc")

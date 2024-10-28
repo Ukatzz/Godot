@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://b8xw6tmbhl4np"]
+
+[ext_resource type="Texture2D" uid="uid://dm5ncqt7qhce" path="res://Assets/resourses/Buildings/houses/knights/Tower/Tower_Red.png" id="1_gwt5r"]
+[ext_resource type="Script" path="res://Scripts/Towers/tower_menu.gd" id="2_vgt6u"]
+
+[node name="rer_tower" type="Sprite2D"]
+texture = ExtResource("1_gwt5r")
+script = ExtResource("2_vgt6u")
+
+[node name="Button" type="Button" parent="."]
+self_modulate = Color(1, 1, 1, 0)
+offset_left = -60.0
+offset_top = -79.0
+offset_right = 62.0
+offset_bottom = 109.0
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

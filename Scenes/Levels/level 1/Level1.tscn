@@ -1,9 +1,8 @@
-[gd_scene load_steps=6 format=4 uid="uid://dmh5kqukb42js"]
+[gd_scene load_steps=5 format=4 uid="uid://dmh5kqukb42js"]
 
 [ext_resource type="TileSet" uid="uid://blqu28xiva5i8" path="res://Assets/tilesets/tileset_terrains.tres" id="1_ivhql"]
 [ext_resource type="Script" path="res://Scripts/Levels/level 1/tileset_terrains.gd" id="1_s5kce"]
-[ext_resource type="PackedScene" uid="uid://dldfo2l7spnkl" path="res://Scenes/Single/Towers/tower_construct.tscn" id="4_qpngg"]
-[ext_resource type="PackedScene" uid="uid://o8754ar0ws8i" path="res://Scenes/Single/Towers/tower_blue.tscn" id="5_s5dw0"]
+[ext_resource type="PackedScene" uid="uid://b2stswfb37sss" path="res://Scenes/Single/Towers/base_tower.tscn" id="4_uktdr"]
 [ext_resource type="Script" path="res://Scripts/Levels/level 1/path_spawner.gd" id="8_36rs6"]
 
 [node name="CanvasLayer" type="CanvasLayer"]
@@ -88,28 +87,28 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 
-[node name="Tower_Holder" type="Node2D" parent="."]
+[node name="Base_Tower" parent="." instance=ExtResource("4_uktdr")]
+offset_left = -412.0
+offset_top = -275.0
+offset_right = -283.0
+offset_bottom = -180.0
 
-[node name="Tower1" parent="Tower_Holder" instance=ExtResource("4_qpngg")]
-offset_left = 805.0
-offset_top = 583.0
-offset_right = 932.0
-offset_bottom = 679.0
+[node name="Base_Tower2" parent="." instance=ExtResource("4_uktdr")]
+offset_left = 226.0
+offset_top = -150.0
+offset_right = 355.0
+offset_bottom = -55.0
 
-[node name="Tower2" parent="Tower_Holder" instance=ExtResource("4_qpngg")]
-offset_left = 1189.0
-offset_top = 381.0
-offset_right = 1316.0
-offset_bottom = 477.0
+[node name="Base_Tower3" parent="." instance=ExtResource("4_uktdr")]
+offset_left = 577.0
+offset_top = -460.0
+offset_right = 706.0
+offset_bottom = -365.0
 
-[node name="Tower3" parent="Tower_Holder" instance=ExtResource("4_qpngg")]
-offset_left = 541.0
-offset_top = 266.0
-offset_right = 668.0
-offset_bottom = 362.0
-
-[node name="Tower_BLue" parent="." instance=ExtResource("5_s5dw0")]
-visible = false
-position = Vector2(1248, 364)
+[node name="Base_Tower4" parent="." instance=ExtResource("4_uktdr")]
+offset_left = 420.0
+offset_top = 235.0
+offset_right = 549.0
+offset_bottom = 330.0
 
 [connection signal="timeout" from="Tileset Terrains/PathSpawner/Timer" to="Tileset Terrains/PathSpawner" method="_on_timer_timeout"]
