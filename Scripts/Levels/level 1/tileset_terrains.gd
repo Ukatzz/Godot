@@ -1,6 +1,7 @@
 extends Node2D
 
-@onready var fade_rect = $"../ColorRect"# Убедитесь, что это правильный путь
+@onready var fade_rect = $"../CanvasLayer/ColorRect"# Убедитесь, что это правильный путь
+@onready var layer = $"../CanvasLayer"
 
 func _ready() -> void:
 	fade_rect.modulate.a = 1  # Начальная альфа на 1 (полностью непрозрачный)
@@ -13,5 +14,4 @@ func fade_in() -> void:
 	tween.finished.connect(_on_fade_in_completed)
 
 func _on_fade_in_completed() -> void:
-	# Здесь можно добавить логику, которая будет выполнена после завершения плавного появления
-	print("Плавный переход завершён.")
+	layer.hide()

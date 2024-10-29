@@ -1,0 +1,67 @@
+[gd_scene load_steps=5 format=3 uid="uid://d3m3q8fmqgv71"]
+
+[ext_resource type="PackedScene" uid="uid://drm3mcoinrocr" path="res://Scenes/UI/camera.tscn" id="2_a6f62"]
+[ext_resource type="PackedScene" uid="uid://c8d8oik72ur77" path="res://Scenes/Levels/level 1/Terrain.tscn" id="2_ac6l2"]
+[ext_resource type="Script" path="res://Scripts/Towers/tower_holder.gd" id="3_17el3"]
+[ext_resource type="PackedScene" uid="uid://b2stswfb37sss" path="res://Scenes/Single/Towers/base_tower.tscn" id="3_gy5d3"]
+
+[node name="Full level" type="Node2D"]
+
+[node name="Camera" parent="." instance=ExtResource("2_a6f62")]
+
+[node name="Tileset Terrains" parent="." instance=ExtResource("2_ac6l2")]
+position = Vector2(-910, -578)
+
+[node name="Tower holder" type="Node2D" parent="."]
+script = ExtResource("3_17el3")
+
+[node name="Base_Tower2" parent="Tower holder" instance=ExtResource("3_gy5d3")]
+anchors_preset = -1
+anchor_left = -0.024
+anchor_top = 0.047
+anchor_right = -0.024
+anchor_bottom = 0.047
+offset_left = -367.0
+offset_top = -313.0
+offset_right = -238.0
+offset_bottom = -218.0
+
+[node name="Base_Tower3" parent="Tower holder" instance=ExtResource("3_gy5d3")]
+anchors_preset = -1
+anchor_left = -0.226
+anchor_top = 0.23
+anchor_right = -0.226
+anchor_bottom = 0.23
+offset_left = 465.0
+offset_top = 202.0
+offset_right = 594.0
+offset_bottom = 297.0
+
+[node name="Base_Tower4" parent="Tower holder" instance=ExtResource("3_gy5d3")]
+anchors_preset = -1
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = 276.0
+offset_top = -183.0
+offset_right = 405.0
+offset_bottom = -88.0
+
+[node name="Base_Tower" parent="Tower holder" instance=ExtResource("3_gy5d3")]
+offset_left = -494.0
+offset_top = 203.0
+offset_right = -365.0
+offset_bottom = 298.0
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+anchors_preset = -1
+anchor_left = -0.810417
+anchor_top = -0.978704
+anchor_right = 1.10729
+anchor_bottom = 1.27037
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true

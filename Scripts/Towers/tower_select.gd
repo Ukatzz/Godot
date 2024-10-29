@@ -1,8 +1,20 @@
 extends Button
 
 @onready var towers = $"../../Towers"
-# Called when the node enters the scene tree for the first time.
 
+var initial_position: Vector2  # Переменная для хранения начальной позиции
+
+signal tower_selected
+
+func _ready() -> void:
+	# Сохраняем начальную позицию при запуске
+	initial_position = towers.position
 func _on_pressed() -> void:
-	towers.visible = true
 	
+	if towers.visible:
+		towers.hide()
+	else:
+		# Сбрасываем позицию к исходной и показываем панель
+		towers.position = initial_position
+		towers.show()
+	emit_signal("tower_selected")

@@ -4,7 +4,7 @@
 [ext_resource type="TileSet" uid="uid://blqu28xiva5i8" path="res://Assets/tilesets/tileset_terrains.tres" id="1_a3f0a"]
 [ext_resource type="Texture2D" uid="uid://duo3vqxpifshy" path="res://UI/Buttons/Button_Hover_3Slides.png" id="2_un5u3"]
 [ext_resource type="Texture2D" uid="uid://clcqel5dd5304" path="res://UI/Buttons/Button_Blue_3Slides.png" id="3_8c42l"]
-[ext_resource type="PackedScene" uid="uid://dmh5kqukb42js" path="res://Scenes/Levels/level 1/Level1.tscn" id="3_elvaw"]
+[ext_resource type="PackedScene" uid="uid://d3m3q8fmqgv71" path="res://Scenes/Levels/level 1/Full level.tscn" id="3_fo4i5"]
 [ext_resource type="Texture2D" uid="uid://b2i7j4x8k1aii" path="res://UI/Buttons/Button_Red_3Slides.png" id="4_0mr1f"]
 [ext_resource type="PackedScene" uid="uid://2goai1heegcp" path="res://Scenes/Levels/level 1/path1.tscn" id="4_06me2"]
 [ext_resource type="Texture2D" uid="uid://4n8eb0dvlcxe" path="res://UI/Buttons/Button_Blue_3Slides_Pressed.png" id="4_caxi6"]
@@ -70,7 +70,7 @@ anchor_bottom = 0.5
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_33ery")
-new_game_scene = ExtResource("3_elvaw")
+new_game_scene = ExtResource("3_fo4i5")
 options_scene = ExtResource("4_06me2")
 
 [node name="Button Container" type="VBoxContainer" parent="Main menu"]
@@ -171,6 +171,7 @@ uppercase = true
 metadata/_edit_use_anchors_ = true
 
 [node name="ColorRect" type="ColorRect" parent="."]
+visible = false
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
