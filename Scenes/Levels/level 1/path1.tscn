@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://2goai1heegcp"]
 
-[ext_resource type="PackedScene" uid="uid://hct0f637xs7t" path="res://Assets/scenes/goblin_tnt.tscn" id="1_qnr1l"]
+[ext_resource type="PackedScene" uid="uid://hct0f637xs7t" path="res://Scenes/Single/goblin_tnt.tscn" id="1_qnr1l"]
 
 [sub_resource type="Curve2D" id="Curve2D_byxah"]
 _data = {

@@ -1,9 +1,118 @@
-[gd_scene load_steps=5 format=3 uid="uid://d3m3q8fmqgv71"]
+[gd_scene load_steps=23 format=3 uid="uid://d3m3q8fmqgv71"]
 
 [ext_resource type="PackedScene" uid="uid://drm3mcoinrocr" path="res://Scenes/UI/camera.tscn" id="2_a6f62"]
 [ext_resource type="PackedScene" uid="uid://c8d8oik72ur77" path="res://Scenes/Levels/level 1/Terrain.tscn" id="2_ac6l2"]
 [ext_resource type="Script" path="res://Scripts/Towers/tower_holder.gd" id="3_17el3"]
 [ext_resource type="PackedScene" uid="uid://b2stswfb37sss" path="res://Scenes/Single/Towers/base_tower.tscn" id="3_gy5d3"]
+[ext_resource type="Texture2D" uid="uid://bhsccay5c6rye" path="res://Assets/characters/Goblins/Troops/TNT/Red/TNT_Red.png" id="5_iuq6o"]
+[ext_resource type="Script" path="res://Scripts/Enemies/goblin.gd" id="5_mpuum"]
+[ext_resource type="Script" path="res://Scripts/Enemies/goblin_main.gd" id="6_as5ss"]
+
+[sub_resource type="Curve2D" id="Curve2D_bvmyc"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 168, -538, 0, 0, 0, 0, 170, 51, 0, 0, 0, 0, 300, 60, 0, 0, 0, 0, 300, 323, 0, 0, 0, 0, -200, 317, 0, 0, 0, 0, -206, -4, 0, 0, 0, 0, -715, -2, 0, 0, 0, 0, -719, -270)
+}
+point_count = 8
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ws48x"]
+atlas = ExtResource("5_iuq6o")
+region = Rect2(0, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8f8hd"]
+atlas = ExtResource("5_iuq6o")
+region = Rect2(192, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ku7ef"]
+atlas = ExtResource("5_iuq6o")
+region = Rect2(384, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mk7kx"]
+atlas = ExtResource("5_iuq6o")
+region = Rect2(576, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ab746"]
+atlas = ExtResource("5_iuq6o")
+region = Rect2(768, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2n2q8"]
+atlas = ExtResource("5_iuq6o")
+region = Rect2(960, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2p273"]
+atlas = ExtResource("5_iuq6o")
+region = Rect2(0, 192, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4ydso"]
+atlas = ExtResource("5_iuq6o")
+region = Rect2(192, 192, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rn6w6"]
+atlas = ExtResource("5_iuq6o")
+region = Rect2(384, 192, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iytbb"]
+atlas = ExtResource("5_iuq6o")
+region = Rect2(576, 192, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_45rxy"]
+atlas = ExtResource("5_iuq6o")
+region = Rect2(768, 192, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_51dyc"]
+atlas = ExtResource("5_iuq6o")
+region = Rect2(960, 192, 192, 192)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_tf4n1"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ws48x")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8f8hd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ku7ef")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mk7kx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ab746")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2n2q8")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2p273")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4ydso")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rn6w6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_iytbb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_45rxy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_51dyc")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 10.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_cf6u5"]
+radius = 51.0
 
 [node name="Full level" type="Node2D"]
 
@@ -57,6 +166,7 @@ offset_bottom = 298.0
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+visible = false
 anchors_preset = -1
 anchor_left = -0.810417
 anchor_top = -0.978704
@@ -65,3 +175,25 @@ anchor_bottom = 1.27037
 grow_horizontal = 2
 grow_vertical = 2
 metadata/_edit_use_anchors_ = true
+
+[node name="Enemy" type="Node2D" parent="."]
+script = ExtResource("5_mpuum")
+
+[node name="Path1" type="Path2D" parent="Enemy"]
+curve = SubResource("Curve2D_bvmyc")
+
+[node name="PathFollow" type="PathFollow2D" parent="Enemy/Path1"]
+position = Vector2(168, -538)
+rotates = false
+cubic_interp = false
+
+[node name="Goblin" type="CharacterBody2D" parent="Enemy/Path1/PathFollow"]
+script = ExtResource("6_as5ss")
+
+[node name="anim" type="AnimatedSprite2D" parent="Enemy/Path1/PathFollow/Goblin"]
+sprite_frames = SubResource("SpriteFrames_tf4n1")
+animation = &"walk"
+frame_progress = 0.649855
+
+[node name="collision" type="CollisionShape2D" parent="Enemy/Path1/PathFollow/Goblin"]
+shape = SubResource("CircleShape2D_cf6u5")
