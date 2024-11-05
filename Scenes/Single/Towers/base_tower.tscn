@@ -55,7 +55,6 @@ script = ExtResource("13_rlu8e")
 
 [node name="red_tower" parent="Towers" instance=ExtResource("2_x6c1m")]
 position = Vector2(86, 128)
-metadata/_edit_group_ = true
 
 [node name="Select_red" type="Button" parent="Towers/red_tower"]
 self_modulate = Color(1, 1, 1, 0)

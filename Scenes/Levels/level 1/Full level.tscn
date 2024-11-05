@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://d3m3q8fmqgv71"]
+[gd_scene load_steps=26 format=3 uid="uid://d3m3q8fmqgv71"]
 
 [ext_resource type="PackedScene" uid="uid://drm3mcoinrocr" path="res://Scenes/UI/camera.tscn" id="2_a6f62"]
 [ext_resource type="PackedScene" uid="uid://c8d8oik72ur77" path="res://Scenes/Levels/level 1/Terrain.tscn" id="2_ac6l2"]
@@ -7,6 +7,9 @@
 [ext_resource type="Texture2D" uid="uid://bhsccay5c6rye" path="res://Assets/characters/Goblins/Troops/TNT/Red/TNT_Red.png" id="5_iuq6o"]
 [ext_resource type="Script" path="res://Scripts/Enemies/goblin.gd" id="5_mpuum"]
 [ext_resource type="Script" path="res://Scripts/Enemies/goblin_main.gd" id="6_as5ss"]
+[ext_resource type="Texture2D" uid="uid://cyopv5sp8buww" path="res://UI/Buttons/Button_Blue.png" id="8_3q6c3"]
+[ext_resource type="Texture2D" uid="uid://c1xb8ebjkmnd7" path="res://UI/Buttons/Button_Blue_Pressed.png" id="9_5uwuh"]
+[ext_resource type="Texture2D" uid="uid://dc6bxhefqd8na" path="res://UI/Buttons/Button_Hover.png" id="10_srqlt"]
 
 [sub_resource type="Curve2D" id="Curve2D_bvmyc"]
 _data = {
@@ -117,11 +120,14 @@ radius = 51.0
 [node name="Full level" type="Node2D"]
 
 [node name="Camera" parent="." instance=ExtResource("2_a6f62")]
+visible = false
 
 [node name="Tileset Terrains" parent="." instance=ExtResource("2_ac6l2")]
+visible = false
 position = Vector2(-910, -578)
 
 [node name="Tower holder" type="Node2D" parent="."]
+visible = false
 script = ExtResource("3_17el3")
 
 [node name="Base_Tower2" parent="Tower holder" instance=ExtResource("3_gy5d3")]
@@ -164,9 +170,9 @@ offset_right = -365.0
 offset_bottom = 298.0
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
+visible = false
 
 [node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
-visible = false
 anchors_preset = -1
 anchor_left = -0.810417
 anchor_top = -0.978704
@@ -177,7 +183,9 @@ grow_vertical = 2
 metadata/_edit_use_anchors_ = true
 
 [node name="Enemy" type="Node2D" parent="."]
+visible = false
 script = ExtResource("5_mpuum")
+speed = 50
 
 [node name="Path1" type="Path2D" parent="Enemy"]
 curve = SubResource("Curve2D_bvmyc")
@@ -197,3 +205,15 @@ frame_progress = 0.649855
 
 [node name="collision" type="CollisionShape2D" parent="Enemy/Path1/PathFollow/Goblin"]
 shape = SubResource("CircleShape2D_cf6u5")
+
+[node name="NewWave" type="TextureButton" parent="."]
+offset_left = 128.0
+offset_top = -568.0
+offset_right = 226.0
+offset_bottom = -470.0
+texture_normal = ExtResource("8_3q6c3")
+texture_pressed = ExtResource("9_5uwuh")
+texture_hover = ExtResource("10_srqlt")
+stretch_mode = 0
+
+[node name="NewWave" type="Sprite2D" parent="NewWave"]
