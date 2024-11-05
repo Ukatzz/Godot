@@ -1,0 +1,33 @@
+[gd_resource type="TileSet" load_steps=3 format=3 uid="uid://dad4s1d1ndrt"]
+
+[ext_resource type="Texture2D" uid="uid://duoco6mafr1rk" path="res://Assets/TileSets/Deco.png" id="1_64824"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_osxqn"]
+texture = ExtResource("1_64824")
+texture_region_size = Vector2i(64, 64)
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+4:0/0 = 0
+5:0/0 = 0
+6:0/0 = 0
+7:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+4:1/0 = 0
+5:1/0 = 0
+6:1/0 = 0
+7:1/size_in_atlas = Vector2i(1, 2)
+7:1/0 = 0
+0:3/size_in_atlas = Vector2i(1, 2)
+0:3/0 = 0
+1:3/size_in_atlas = Vector2i(3, 3)
+1:3/0 = 0
+
+[resource]
+tile_size = Vector2i(64, 64)
+sources/18 = SubResource("TileSetAtlasSource_osxqn")
+tile_proxies/coords_level = [[0, Vector2i(0, 0)], [18, Vector2i(0, 0)], [1, Vector2i(0, 0)], [18, Vector2i(1, 0)], [2, Vector2i(0, 0)], [18, Vector2i(2, 0)], [3, Vector2i(0, 0)], [18, Vector2i(3, 0)], [4, Vector2i(0, 0)], [18, Vector2i(4, 0)], [5, Vector2i(0, 0)], [18, Vector2i(5, 0)], [6, Vector2i(0, 0)], [18, Vector2i(6, 0)], [7, Vector2i(0, 0)], [18, Vector2i(7, 0)], [8, Vector2i(0, 0)], [18, Vector2i(0, 1)], [9, Vector2i(0, 0)], [18, Vector2i(1, 1)], [10, Vector2i(0, 0)], [18, Vector2i(2, 1)], [11, Vector2i(0, 0)], [18, Vector2i(3, 1)], [12, Vector2i(0, 0)], [18, Vector2i(4, 1)], [13, Vector2i(0, 0)], [18, Vector2i(5, 1)], [14, Vector2i(0, 0)], [18, Vector2i(6, 1)], [15, Vector2i(0, 0)], [18, Vector2i(7, 1)], [16, Vector2i(0, 0)], [18, Vector2i(0, 3)], [17, Vector2i(0, 0)], [18, Vector2i(1, 3)]]

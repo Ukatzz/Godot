@@ -1,0 +1,50 @@
+[gd_resource type="TileSet" load_steps=11 format=3 uid="uid://betkckdfomglc"]
+
+[ext_resource type="Texture2D" uid="uid://stk205fxpccn" path="res://Resoursec (tiny swords)/Resources/Trees/Tree.png" id="1_4jyg4"]
+[ext_resource type="Texture2D" uid="uid://csrslfopcnb4g" path="res://Resoursec (tiny swords)/Resources/Gold Mine/GoldMine_Active.png" id="2_xke5e"]
+[ext_resource type="Texture2D" uid="uid://cd0lsobwq1yng" path="res://Resoursec (tiny swords)/Resources/Gold Mine/GoldMine_Destroyed.png" id="3_wgbhv"]
+[ext_resource type="Texture2D" uid="uid://bbldr30emu2y1" path="res://Resoursec (tiny swords)/Resources/Gold Mine/GoldMine_Inactive.png" id="4_cx8g4"]
+[ext_resource type="Texture2D" uid="uid://b1w8dw46bc42a" path="res://Resoursec (tiny swords)/Factions/Knights/Buildings/House/House_Blue.png" id="5_2j3lj"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1p7pg"]
+texture = ExtResource("1_4jyg4")
+texture_region_size = Vector2i(64, 64)
+0:0/size_in_atlas = Vector2i(3, 3)
+0:0/animation_speed = 8.0
+0:0/animation_frame_0/duration = 1.0
+0:0/animation_frame_1/duration = 1.0
+0:0/animation_frame_2/duration = 1.0
+0:0/animation_frame_3/duration = 1.0
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_55mc6"]
+texture = ExtResource("2_xke5e")
+texture_region_size = Vector2i(64, 64)
+0:0/size_in_atlas = Vector2i(3, 2)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_p758v"]
+texture = ExtResource("3_wgbhv")
+texture_region_size = Vector2i(64, 64)
+0:0/size_in_atlas = Vector2i(3, 2)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_gyg0c"]
+texture = ExtResource("4_cx8g4")
+texture_region_size = Vector2i(64, 64)
+0:0/size_in_atlas = Vector2i(3, 2)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_pi2ir"]
+texture = ExtResource("5_2j3lj")
+texture_region_size = Vector2i(64, 64)
+0:0/size_in_atlas = Vector2i(2, 3)
+0:0/0 = 0
+
+[resource]
+tile_size = Vector2i(64, 64)
+sources/0 = SubResource("TileSetAtlasSource_1p7pg")
+sources/2 = SubResource("TileSetAtlasSource_55mc6")
+sources/3 = SubResource("TileSetAtlasSource_p758v")
+sources/4 = SubResource("TileSetAtlasSource_gyg0c")
+sources/5 = SubResource("TileSetAtlasSource_pi2ir")
