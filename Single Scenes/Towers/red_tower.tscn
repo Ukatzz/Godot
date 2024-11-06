@@ -1,0 +1,197 @@
+[gd_scene load_steps=25 format=3 uid="uid://dpkvkece3jyx7"]
+
+[ext_resource type="Texture2D" uid="uid://j7phvb25rhfe" path="res://Resoursec (tiny swords)/Factions/Knights/Buildings/Tower/Tower_Red.png" id="1_7wbyj"]
+[ext_resource type="Script" path="res://Scripts/Tower/red_tower.gd" id="1_gfdth"]
+[ext_resource type="Texture2D" uid="uid://cirvus3q84fc8" path="res://Resoursec (tiny swords)/Factions/Knights/Troops/Archer/Red/Archer_Red.png" id="2_6h50q"]
+[ext_resource type="Texture2D" uid="uid://o4u630enpy3v" path="res://Resoursec (tiny swords)/UI/Buttons/Button_Blue.png" id="4_i3oil"]
+[ext_resource type="Texture2D" uid="uid://bmnkp238veylo" path="res://Resoursec (tiny swords)/UI/Buttons/Button_Blue_Pressed.png" id="5_py1gu"]
+[ext_resource type="Texture2D" uid="uid://bhfdj5cuq5j70" path="res://Resoursec (tiny swords)/UI/Buttons/Button_Hover.png" id="6_bv2h2"]
+[ext_resource type="Texture2D" uid="uid://ce77krg24ged5" path="res://Resoursec (tiny swords)/UI/Buttons/Button_Red.png" id="7_kxwgq"]
+[ext_resource type="Texture2D" uid="uid://dyjlub7nqep1k" path="res://Resoursec (tiny swords)/UI/Buttons/Button_Red_Pressed.png" id="8_3iugm"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xrtx4"]
+atlas = ExtResource("2_6h50q")
+region = Rect2(0, 576, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kyfjf"]
+atlas = ExtResource("2_6h50q")
+region = Rect2(192, 576, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_afln3"]
+atlas = ExtResource("2_6h50q")
+region = Rect2(384, 576, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oxvvy"]
+atlas = ExtResource("2_6h50q")
+region = Rect2(576, 576, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p5ueo"]
+atlas = ExtResource("2_6h50q")
+region = Rect2(768, 576, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fp2pq"]
+atlas = ExtResource("2_6h50q")
+region = Rect2(960, 576, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0f0uu"]
+atlas = ExtResource("2_6h50q")
+region = Rect2(1152, 576, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i32gq"]
+atlas = ExtResource("2_6h50q")
+region = Rect2(1344, 576, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hmnyv"]
+atlas = ExtResource("2_6h50q")
+region = Rect2(0, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cv0mv"]
+atlas = ExtResource("2_6h50q")
+region = Rect2(192, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fices"]
+atlas = ExtResource("2_6h50q")
+region = Rect2(384, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vxe7u"]
+atlas = ExtResource("2_6h50q")
+region = Rect2(576, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v4nhb"]
+atlas = ExtResource("2_6h50q")
+region = Rect2(768, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2u43s"]
+atlas = ExtResource("2_6h50q")
+region = Rect2(960, 0, 192, 192)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_3aldh"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xrtx4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kyfjf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_afln3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oxvvy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p5ueo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fp2pq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0f0uu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i32gq")
+}],
+"loop": true,
+"name": &"attack",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hmnyv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cv0mv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fices")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vxe7u")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v4nhb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2u43s")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 10.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_orv4v"]
+radius = 324.002
+
+[node name="Red_tower" type="Node2D" node_paths=PackedStringArray("first_shot_timer", "shot_delay_timer")]
+script = ExtResource("1_gfdth")
+first_shot_timer = NodePath("First Shot")
+shot_delay_timer = NodePath("Delay Shots")
+
+[node name="Red_TowerSprite" type="Sprite2D" parent="."]
+texture = ExtResource("1_7wbyj")
+
+[node name="Archer" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -59)
+sprite_frames = SubResource("SpriteFrames_3aldh")
+animation = &"attack"
+frame = 7
+
+[node name="Attack_Area" type="Area2D" parent="."]
+
+[node name="Collision" type="CollisionShape2D" parent="Attack_Area"]
+shape = SubResource("CircleShape2D_orv4v")
+
+[node name="Panel" type="Panel" parent="."]
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 70.0
+offset_top = -103.0
+offset_right = 134.0
+offset_bottom = 101.0
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -32.0
+offset_top = -200.0
+offset_right = 32.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="Upgrade" type="TextureButton" parent="Panel/VBoxContainer"]
+layout_mode = 2
+texture_normal = ExtResource("4_i3oil")
+texture_pressed = ExtResource("5_py1gu")
+texture_hover = ExtResource("6_bv2h2")
+
+[node name="Replace" type="TextureButton" parent="Panel/VBoxContainer"]
+layout_mode = 2
+texture_normal = ExtResource("4_i3oil")
+texture_pressed = ExtResource("5_py1gu")
+texture_hover = ExtResource("6_bv2h2")
+
+[node name="Delete" type="TextureButton" parent="Panel/VBoxContainer"]
+layout_mode = 2
+texture_normal = ExtResource("7_kxwgq")
+texture_pressed = ExtResource("8_3iugm")
+texture_hover = ExtResource("6_bv2h2")
+
+[node name="First Shot" type="Timer" parent="."]
+wait_time = 3.0
+one_shot = true
+
+[node name="Delay Shots" type="Timer" parent="."]
+one_shot = true
+
+[connection signal="pressed" from="Panel/VBoxContainer/Upgrade" to="." method="_on_upgrade_pressed"]
+[connection signal="pressed" from="Panel/VBoxContainer/Replace" to="." method="_on_replace_pressed"]
+[connection signal="pressed" from="Panel/VBoxContainer/Delete" to="." method="_on_delete_pressed"]
+[connection signal="timeout" from="First Shot" to="." method="_on_first_shot_timeout"]
+[connection signal="timeout" from="Delay Shots" to="." method="_on_delay_shots_timeout"]

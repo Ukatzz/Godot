@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://dijj8hvntgtrc"]
+
+[ext_resource type="PackedScene" uid="uid://ckqld8xlbcb83" path="res://Single Scenes/Enemies/goblin.tscn" id="1_rop4l"]
+
+[sub_resource type="Curve2D" id="Curve2D_2fy0i"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 1993, 1026, 0, 0, 0, 0, 1473, 1027, 0, 0, 0, 0, 1468, 825, 0, 0, 0, 0, 332, 838)
+}
+point_count = 4
+
+[node name="Second_Path" type="Path2D"]
+curve = SubResource("Curve2D_2fy0i")
+
+[node name="Path_Follow" type="PathFollow2D" parent="."]
+position = Vector2(1993, 1026)
+rotation = 3.13967
+
+[node name="Goblin" parent="Path_Follow" instance=ExtResource("1_rop4l")]

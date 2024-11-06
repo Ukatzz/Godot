@@ -1,0 +1,68 @@
+[gd_scene load_steps=11 format=3 uid="uid://ckqld8xlbcb83"]
+
+[ext_resource type="Texture2D" uid="uid://b304v5pdjntp1" path="res://Resoursec (tiny swords)/Factions/Goblins/Troops/TNT/Red/TNT_Red.png" id="1_n6h8p"]
+[ext_resource type="Script" path="res://Scripts/Enemies/goblin.gd" id="1_u5ge1"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gcsg7"]
+atlas = ExtResource("1_n6h8p")
+region = Rect2(0, 192, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3rcas"]
+atlas = ExtResource("1_n6h8p")
+region = Rect2(192, 192, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xcqdi"]
+atlas = ExtResource("1_n6h8p")
+region = Rect2(384, 192, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kmhi4"]
+atlas = ExtResource("1_n6h8p")
+region = Rect2(576, 192, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_du3h0"]
+atlas = ExtResource("1_n6h8p")
+region = Rect2(768, 192, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ikbel"]
+atlas = ExtResource("1_n6h8p")
+region = Rect2(960, 192, 192, 192)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_voh6y"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gcsg7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3rcas")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xcqdi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kmhi4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_du3h0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ikbel")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 10.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_42nk0"]
+radius = 46.0109
+
+[node name="Goblin" type="CharacterBody2D"]
+script = ExtResource("1_u5ge1")
+
+[node name="Anim" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_voh6y")
+animation = &"walk"
+frame_progress = 0.676084
+
+[node name="Collision" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_42nk0")
