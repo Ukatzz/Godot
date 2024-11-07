@@ -184,10 +184,10 @@ texture_pressed = ExtResource("8_3iugm")
 texture_hover = ExtResource("6_bv2h2")
 
 [node name="First Shot" type="Timer" parent="."]
-wait_time = 3.0
 one_shot = true
 
 [node name="Delay Shots" type="Timer" parent="."]
+wait_time = 0.5
 one_shot = true
 
 [connection signal="pressed" from="Panel/VBoxContainer/Upgrade" to="." method="_on_upgrade_pressed"]

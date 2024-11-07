@@ -2,6 +2,7 @@ extends Node2D
 
 @onready var panel: Panel = $Tower_construct/Panel
 @onready var tower_place = $Tower_construct
+@onready var camera = $"../Camera2D"
 
 @export var red_tower: PackedScene
 @export var blue_tower: PackedScene
@@ -14,7 +15,14 @@ func _on_select_pressed() -> void:
 	panel.visible = !panel.visible
 
 func _on_red_tower_pressed() -> void:
-	_spawn_tower(red_tower)
+	var gold = camera.get_node("HUD canva/HUD panel/Coins/Label coins")
+	
+	var gold_int = int(gold.text)  # Преобразуем текст в число
+	if gold_int >= 100:
+		GlobalSignals.emit_gold_spend(100)
+		_spawn_tower(red_tower)
+	else:
+		print("не хватает золота")
 
 func _on_blue_tower_pressed() -> void:
 	_spawn_tower(blue_tower)

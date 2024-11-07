@@ -74,15 +74,10 @@ func _create_arrow() -> void:
 
 	if enemies_in_range.size() > 0:
 		var target_enemy = enemies_in_range[0]
-		var direction = (target_enemy.global_position - self.global_position).normalized()
-
-		if direction != Vector2.ZERO:
-			arrow_instance.set_direction(direction)
-		else:
-			print("Ошибка: направление не вычислено правильно!")
-
+		arrow_instance.set_target(target_enemy)  # Передаем врага как цель стрелы
 		get_parent().add_child(arrow_instance)
 		print("Стрела выпущена")
+
 
 func _on_first_shot_timeout() -> void:
 	if has_enemy_in_area:

@@ -22,4 +22,6 @@ func take_damage(amount: int) -> void:
 # Метод для смерти врага
 func die() -> void:
 	# Логика смерти, например, анимация или удаление
+	
+	GlobalSignals.emit_enemy_died(10)
 	queue_free()

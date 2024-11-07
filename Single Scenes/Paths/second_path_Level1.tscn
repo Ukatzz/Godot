@@ -13,6 +13,8 @@ curve = SubResource("Curve2D_2fy0i")
 
 [node name="Path_Follow" type="PathFollow2D" parent="."]
 position = Vector2(1993, 1026)
-rotation = 3.13967
+rotates = false
+cubic_interp = false
+loop = false
 
 [node name="Goblin" parent="Path_Follow" instance=ExtResource("1_rop4l")]
