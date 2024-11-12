@@ -1,7 +1,9 @@
-[gd_scene load_steps=11 format=3 uid="uid://ckqld8xlbcb83"]
+[gd_scene load_steps=13 format=3 uid="uid://ckqld8xlbcb83"]
 
 [ext_resource type="Texture2D" uid="uid://b304v5pdjntp1" path="res://Resoursec (tiny swords)/Factions/Goblins/Troops/TNT/Red/TNT_Red.png" id="1_n6h8p"]
 [ext_resource type="Script" path="res://Scripts/Enemies/goblin.gd" id="1_u5ge1"]
+[ext_resource type="Texture2D" uid="uid://bfv2nmdwp8jbr" path="res://Resoursec (tiny swords)/UI/Bars/bg.png" id="3_lffvv"]
+[ext_resource type="Texture2D" uid="uid://6f0j7m26yhqy" path="res://Resoursec (tiny swords)/UI/Bars/red.png" id="4_n7ahj"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_gcsg7"]
 atlas = ExtResource("1_n6h8p")
@@ -67,3 +69,17 @@ frame_progress = 0.676084
 
 [node name="Collision" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_42nk0")
+
+[node name="Node" type="Node2D" parent="."]
+position = Vector2(0, -33)
+scale = Vector2(0.3, 0.3)
+metadata/_edit_group_ = true
+
+[node name="HP" type="TextureProgressBar" parent="Node"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture_under = ExtResource("3_lffvv")
+texture_progress = ExtResource("4_n7ahj")

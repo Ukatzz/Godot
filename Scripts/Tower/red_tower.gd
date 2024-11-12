@@ -38,13 +38,11 @@ func _check_enemies_in_area() -> void:
 			has_enemy_in_area = true
 			is_attacking = true
 			anim.play("attack")
-			print("Враг найден при загрузке сцены: ", body.name)
 
 func _on_enemy_entered(body: Node) -> void:
 	if body.is_in_group("enemies"):
 		enemies_in_range.append(body)
 		has_enemy_in_area = true
-		print("Враг в области: ", body.name)
 		first_shot_timer.start()
 
 func _on_enemy_exited(body: Node) -> void:
@@ -54,7 +52,6 @@ func _on_enemy_exited(body: Node) -> void:
 			has_enemy_in_area = false
 			is_attacking = false
 			anim.play("idle")
-		print("Враг покинул область: ", body.name)
 
 func _on_frame_changed() -> void:
 	# Отслеживаем фрейм анимации и создаем стрелу, если нужно
@@ -76,7 +73,6 @@ func _create_arrow() -> void:
 		var target_enemy = enemies_in_range[0]
 		arrow_instance.set_target(target_enemy)  # Передаем врага как цель стрелы
 		get_parent().add_child(arrow_instance)
-		print("Стрела выпущена")
 
 
 func _on_first_shot_timeout() -> void:

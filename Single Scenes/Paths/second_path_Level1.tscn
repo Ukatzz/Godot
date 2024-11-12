@@ -4,15 +4,15 @@
 
 [sub_resource type="Curve2D" id="Curve2D_2fy0i"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, 1993, 1026, 0, 0, 0, 0, 1473, 1027, 0, 0, 0, 0, 1468, 825, 0, 0, 0, 0, 332, 838)
+"points": PackedVector2Array(0, 0, 0, 0, 1843, 1993, 0, 0, 0, 0, 1840, 830, 0, 0, 0, 0, 1404, 828, 0, 0, 0, 0, 1393, 1199, 0, 0, 0, 0, 834, 1195, 0, 0, 0, 0, 809, 761, 0, 0, 0, 0, 834, 273, 0, 0, 0, 0, 306, 240, 0, 0, 0, 0, 317, -73, 0, 0, 0, 0, 673, -162, 0, 0, 0, 0, 670, -294, 0, 0, 0, 0, 880, -387)
 }
-point_count = 4
+point_count = 12
 
 [node name="Second_Path" type="Path2D"]
 curve = SubResource("Curve2D_2fy0i")
 
 [node name="Path_Follow" type="PathFollow2D" parent="."]
-position = Vector2(1993, 1026)
+position = Vector2(1843, 1993)
 rotates = false
 cubic_interp = false
 loop = false
